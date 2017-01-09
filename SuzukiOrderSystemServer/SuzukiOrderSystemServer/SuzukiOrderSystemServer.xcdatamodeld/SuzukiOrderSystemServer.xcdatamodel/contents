@@ -4,8 +4,24 @@
         <attribute name="groupName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="groupOrderingValue" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="groupTypeIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="itemsOfGroup" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="group" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="Item" syncable="YES">
+        <attribute name="itemCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemDateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="itemExplain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemImage" optional="YES" transient="YES" syncable="YES"/>
+        <attribute name="itemImageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="itemName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemOrderingRow" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="itemPrice" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="itemThumbnail" optional="YES" transient="YES" syncable="YES"/>
+        <attribute name="itemThumbnailData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="itemTypeIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="itemsOfGroup" inverseEntity="Group" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Group" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Group" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Item" positionX="-63" positionY="9" width="128" height="225"/>
     </elements>
 </model>

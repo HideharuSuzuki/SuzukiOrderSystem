@@ -9,8 +9,8 @@
 #import "AppDelegate.h"
 #import "GroupStore.h"
 #import "Group.h"
-//#import "ItemStore.h"
-//#import "Item.h"
+#import "ItemStore.h"
+#import "Item.h"
 
 static GroupStore *defaultGroupStore = nil;
 

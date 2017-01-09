@@ -13,6 +13,6 @@
 @dynamic groupName;
 @dynamic groupOrderingValue;
 @dynamic groupTypeIndex;
-@dynamic items;
+@dynamic itemsOfGroup;
 
 @end

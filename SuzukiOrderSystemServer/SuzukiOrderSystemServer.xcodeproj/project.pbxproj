@@ -22,6 +22,11 @@
 		69C6CF331E1D80D800CDDE21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C6CF321E1D80D800CDDE21 /* AppDelegate.m */; };
 		69C6CF3B1E1D80D800CDDE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C6CF3A1E1D80D800CDDE21 /* Assets.xcassets */; };
 		69C6CF3E1E1D80D800CDDE21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C6CF3C1E1D80D800CDDE21 /* LaunchScreen.storyboard */; };
+		69F395531E232808005E1EC9 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F395501E232808005E1EC9 /* Item.m */; };
+		69F395541E232808005E1EC9 /* ItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F395521E232808005E1EC9 /* ItemStore.m */; };
+		69F395571E232A3A005E1EC9 /* FileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F395561E232A3A005E1EC9 /* FileHelpers.m */; };
+		69F3955C1E232C15005E1EC9 /* GroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F3955A1E232C15005E1EC9 /* GroupDetailViewController.m */; };
+		69F3955D1E232C15005E1EC9 /* GroupDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F3955B1E232C15005E1EC9 /* GroupDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +57,16 @@
 		69C6CF3A1E1D80D800CDDE21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69C6CF3D1E1D80D800CDDE21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69C6CF3F1E1D80D800CDDE21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69F3954F1E232808005E1EC9 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		69F395501E232808005E1EC9 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		69F395511E232808005E1EC9 /* ItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemStore.h; sourceTree = "<group>"; };
+		69F395521E232808005E1EC9 /* ItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemStore.m; sourceTree = "<group>"; };
+		69F395551E232A3A005E1EC9 /* FileHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelpers.h; sourceTree = "<group>"; };
+		69F395561E232A3A005E1EC9 /* FileHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelpers.m; sourceTree = "<group>"; };
+		69F395581E232AD8005E1EC9 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		69F395591E232C15005E1EC9 /* GroupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupDetailViewController.h; sourceTree = "<group>"; };
+		69F3955A1E232C15005E1EC9 /* GroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupDetailViewController.m; sourceTree = "<group>"; };
+		69F3955B1E232C15005E1EC9 /* GroupDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +106,7 @@
 				6904925B1E20D926004C9F32 /* GroupListViewController.m */,
 				690492581E20D926004C9F32 /* GroupListCell.h */,
 				690492591E20D926004C9F32 /* GroupListCell.m */,
+				69F3955E1E232C33005E1EC9 /* GroupDetail */,
 			);
 			name = GroupList;
 			sourceTree = "<group>";
@@ -98,6 +114,10 @@
 		692794081E20E2EE00FF580D /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				69F395511E232808005E1EC9 /* ItemStore.h */,
+				69F395521E232808005E1EC9 /* ItemStore.m */,
+				69F3954F1E232808005E1EC9 /* Item.h */,
+				69F395501E232808005E1EC9 /* Item.m */,
 				692794091E20E33F00FF580D /* GroupStore.h */,
 				6927940A1E20E33F00FF580D /* GroupStore.m */,
 				692794051E20E2C200FF580D /* Group.h */,
@@ -146,17 +166,13 @@
 		69C6CF2D1E1D80D800CDDE21 /* SuzukiOrderSystemServer */ = {
 			isa = PBXGroup;
 			children = (
-				692794081E20E2EE00FF580D /* Store */,
-				690492561E20D204004C9F32 /* Views */,
 				69BDC3421E1E24E300AE580F /* Master */,
 				69BDC3481E1E287700AE580F /* Detail */,
-				69BDC3391E1E226300AE580F /* Define.h */,
+				692794081E20E2EE00FF580D /* Store */,
+				690492561E20D204004C9F32 /* Views */,
+				69F3955F1E2331D0005E1EC9 /* Other */,
 				69C6CF311E1D80D800CDDE21 /* AppDelegate.h */,
 				69C6CF321E1D80D800CDDE21 /* AppDelegate.m */,
-				69C6CF3A1E1D80D800CDDE21 /* Assets.xcassets */,
-				69C6CF3C1E1D80D800CDDE21 /* LaunchScreen.storyboard */,
-				69C6CF3F1E1D80D800CDDE21 /* Info.plist */,
-				6904925F1E20DD9F004C9F32 /* SuzukiOrderSystemServer.xcdatamodeld */,
 				69C6CF2E1E1D80D800CDDE21 /* Supporting Files */,
 			);
 			path = SuzukiOrderSystemServer;
@@ -168,6 +184,31 @@
 				69C6CF2F1E1D80D800CDDE21 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69F3955E1E232C33005E1EC9 /* GroupDetail */ = {
+			isa = PBXGroup;
+			children = (
+				69F395591E232C15005E1EC9 /* GroupDetailViewController.h */,
+				69F3955A1E232C15005E1EC9 /* GroupDetailViewController.m */,
+				69F3955B1E232C15005E1EC9 /* GroupDetailViewController.xib */,
+			);
+			name = GroupDetail;
+			sourceTree = "<group>";
+		};
+		69F3955F1E2331D0005E1EC9 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				69BDC3391E1E226300AE580F /* Define.h */,
+				69C6CF3A1E1D80D800CDDE21 /* Assets.xcassets */,
+				69C6CF3F1E1D80D800CDDE21 /* Info.plist */,
+				69F395581E232AD8005E1EC9 /* PrefixHeader.pch */,
+				6904925F1E20DD9F004C9F32 /* SuzukiOrderSystemServer.xcdatamodeld */,
+				69F395551E232A3A005E1EC9 /* FileHelpers.h */,
+				69F395561E232A3A005E1EC9 /* FileHelpers.m */,
+				69C6CF3C1E1D80D800CDDE21 /* LaunchScreen.storyboard */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +270,7 @@
 			files = (
 				69BDC3471E1E286900AE580F /* TopViewController.xib in Resources */,
 				69C6CF3E1E1D80D800CDDE21 /* LaunchScreen.storyboard in Resources */,
+				69F3955D1E232C15005E1EC9 /* GroupDetailViewController.xib in Resources */,
 				69BDC3411E1E24D600AE580F /* MasterListViewController.xib in Resources */,
 				69C6CF3B1E1D80D800CDDE21 /* Assets.xcassets in Resources */,
 			);
@@ -241,17 +283,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69F395531E232808005E1EC9 /* Item.m in Sources */,
 				69BDC3461E1E286900AE580F /* TopViewController.m in Sources */,
 				69C6CF331E1D80D800CDDE21 /* AppDelegate.m in Sources */,
 				690492611E20DD9F004C9F32 /* SuzukiOrderSystemServer.xcdatamodeld in Sources */,
 				69BDC3401E1E24D600AE580F /* MasterListViewController.m in Sources */,
 				6904925C1E20D926004C9F32 /* GroupListCell.m in Sources */,
 				6904925D1E20D926004C9F32 /* GroupListViewController.m in Sources */,
+				69F395571E232A3A005E1EC9 /* FileHelpers.m in Sources */,
 				69C6CF301E1D80D800CDDE21 /* main.m in Sources */,
 				692794071E20E2C200FF580D /* Group.m in Sources */,
 				690492551E20D083004C9F32 /* ConnectionConditionView.m in Sources */,
 				69BDC33F1E1E24D600AE580F /* MasterListCell.m in Sources */,
+				69F3955C1E232C15005E1EC9 /* GroupDetailViewController.m in Sources */,
 				6927940B1E20E33F00FF580D /* GroupStore.m in Sources */,
+				69F395541E232808005E1EC9 /* ItemStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = SuzukiOrderSystemServer/PrefixHeader.pch;
 				INFOPLIST_FILE = SuzukiOrderSystemServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SuzukiOrderSystem.SuzukiOrderSystemServer;
@@ -368,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = SuzukiOrderSystemServer/PrefixHeader.pch;
 				INFOPLIST_FILE = SuzukiOrderSystemServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SuzukiOrderSystem.SuzukiOrderSystemServer;

@@ -11,6 +11,8 @@
 #import "MasterListViewController.h"
 #import "TopViewController.h"
 #import "ConnectionConditionView.h"
+#import <CoreData/CoreData.h>
+
 
 @interface AppDelegate ()
 
@@ -21,7 +23,33 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    /* window ViewController設定 -----------------------------------------------------------*/
+    //CoreData設定
+    
+    NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:nil];
+    NSString *path = pathInDocumentDirectory(@"store.data");
+    //NSLog(@"%@",path);
+    NSURL *storeURL = [NSURL fileURLWithPath:path];
+    NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
+    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption:@YES,
+                              NSInferMappingModelAutomaticallyOption:@YES};
+    NSError *error = nil;
+    if (![psc addPersistentStoreWithType:NSSQLiteStoreType
+                           configuration:nil
+                                     URL:storeURL
+                                 options:options
+                                   error:&error]) {
+        [NSException raise:@"store.data Open failed"
+                    format:@"Reason: %@", [error localizedDescription]];
+    }
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
+    [context setPersistentStoreCoordinator:psc];
+    [context setUndoManager:nil];//アンドゥなし
+    
+    if (context) {
+        [self setManagedObjectContext:context];
+    }
+    
+    // window ViewController設定
     
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     

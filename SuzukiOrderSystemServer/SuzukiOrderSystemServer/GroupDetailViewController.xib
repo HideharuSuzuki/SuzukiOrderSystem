@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupDetailViewController">
+            <connections>
+                <outlet property="groupNameTextField" destination="3z2-3C-jZb" id="r4w-36-vfl"/>
+                <outlet property="groupTypeButtonNOMIHO" destination="ydK-hU-daN" id="dev-Cr-4BR"/>
+                <outlet property="groupTypeButtonTABENOMI" destination="pWo-iE-McL" id="NZe-3Z-15u"/>
+                <outlet property="groupTypeButtonTANPIN" destination="zWC-as-7Ye" id="Pao-Ws-AJI"/>
+                <outlet property="saveGroupButton" destination="0UI-Nk-Prl" id="t4w-Ks-y7N"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ名：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjR-Rk-i98">
+                    <rect key="frame" x="80" y="125" width="180" height="50"/>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="24"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="50文字まで" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3z2-3C-jZb">
+                    <rect key="frame" x="270" y="125" width="180" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="5Bo-Ek-Tf8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="9yJ-8T-oge"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリの種類：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKK-QV-hCz">
+                    <rect key="frame" x="80" y="205" width="180" height="50"/>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="24"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydK-hU-daN">
+                    <rect key="frame" x="270" y="270" width="180" height="50"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="飲み放題"/>
+                    <connections>
+                        <action selector="tappedGroupTypeButton:" destination="-1" eventType="touchUpInside" id="sws-QH-ORL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWo-iE-McL">
+                    <rect key="frame" x="270" y="335" width="180" height="50"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="食べ飲み放題"/>
+                    <connections>
+                        <action selector="tappedGroupTypeButton:" destination="-1" eventType="touchUpInside" id="HC8-Ph-8Zg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWC-as-7Ye">
+                    <rect key="frame" x="270" y="205" width="180" height="50"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="単品"/>
+                    <connections>
+                        <action selector="tappedGroupTypeButton:" destination="-1" eventType="touchUpInside" id="COC-aG-blA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0UI-Nk-Prl">
+                    <rect key="frame" x="150" y="415" width="300" height="60"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="カテゴリを新しく追加"/>
+                    <connections>
+                        <action selector="tappedSaveGroupButton:" destination="-1" eventType="touchUpInside" id="fI6-iX-g7Z"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="fjR-Rk-i98" firstAttribute="width" secondItem="3z2-3C-jZb" secondAttribute="width" id="1Bo-7G-ccn"/>
+                <constraint firstItem="zWC-as-7Ye" firstAttribute="width" secondItem="3z2-3C-jZb" secondAttribute="width" id="1u1-6u-VGq"/>
+                <constraint firstItem="ydK-hU-daN" firstAttribute="width" secondItem="zWC-as-7Ye" secondAttribute="width" id="5gQ-dO-WFl"/>
+                <constraint firstItem="ydK-hU-daN" firstAttribute="leading" secondItem="zWC-as-7Ye" secondAttribute="leading" id="64c-hC-EL2"/>
+                <constraint firstItem="0UI-Nk-Prl" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="7Wf-Cn-vOH"/>
+                <constraint firstItem="fjR-Rk-i98" firstAttribute="trailing" secondItem="3z2-3C-jZb" secondAttribute="leading" constant="-10" id="9Mi-MN-qHV"/>
+                <constraint firstItem="ydK-hU-daN" firstAttribute="height" secondItem="zWC-as-7Ye" secondAttribute="height" id="Cqd-Mo-DfJ"/>
+                <constraint firstItem="fjR-Rk-i98" firstAttribute="centerY" secondItem="3z2-3C-jZb" secondAttribute="centerY" id="HrR-jG-Pw5"/>
+                <constraint firstItem="jKK-QV-hCz" firstAttribute="leading" secondItem="fjR-Rk-i98" secondAttribute="leading" id="JEU-Bm-OTx"/>
+                <constraint firstItem="0UI-Nk-Prl" firstAttribute="height" secondItem="pWo-iE-McL" secondAttribute="height" multiplier="1.2:1" id="MIr-dn-i4K"/>
+                <constraint firstItem="zWC-as-7Ye" firstAttribute="centerY" secondItem="jKK-QV-hCz" secondAttribute="centerY" id="MeG-vW-qfb"/>
+                <constraint firstItem="fjR-Rk-i98" firstAttribute="height" secondItem="3z2-3C-jZb" secondAttribute="height" id="UaX-sw-j6C"/>
+                <constraint firstItem="fjR-Rk-i98" firstAttribute="bottom" secondItem="jKK-QV-hCz" secondAttribute="top" constant="-30" id="V2m-y1-6SR"/>
+                <constraint firstItem="3z2-3C-jZb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1.2" id="Y3c-sT-9Q8"/>
+                <constraint firstItem="3z2-3C-jZb" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.3" id="YgT-sY-hGN"/>
+                <constraint firstItem="pWo-iE-McL" firstAttribute="height" secondItem="ydK-hU-daN" secondAttribute="height" id="aIy-5T-Zkl"/>
+                <constraint firstItem="pWo-iE-McL" firstAttribute="top" secondItem="ydK-hU-daN" secondAttribute="bottom" constant="15" id="bfQ-1s-YNK"/>
+                <constraint firstItem="zWC-as-7Ye" firstAttribute="height" secondItem="jKK-QV-hCz" secondAttribute="height" id="cCy-4C-hmP"/>
+                <constraint firstItem="ydK-hU-daN" firstAttribute="top" secondItem="zWC-as-7Ye" secondAttribute="bottom" constant="15" id="iDi-gD-G9S"/>
+                <constraint firstItem="jKK-QV-hCz" firstAttribute="height" secondItem="fjR-Rk-i98" secondAttribute="height" id="mcb-yl-jKa"/>
+                <constraint firstItem="pWo-iE-McL" firstAttribute="leading" secondItem="ydK-hU-daN" secondAttribute="leading" id="pP4-7Y-yUB"/>
+                <constraint firstItem="jKK-QV-hCz" firstAttribute="trailing" secondItem="zWC-as-7Ye" secondAttribute="leading" constant="-10" id="pk2-aw-R0U"/>
+                <constraint firstItem="3z2-3C-jZb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.5" id="ppL-RK-awQ"/>
+                <constraint firstItem="0UI-Nk-Prl" firstAttribute="top" secondItem="pWo-iE-McL" secondAttribute="bottom" constant="30" id="pwd-A0-fZ8"/>
+                <constraint firstItem="pWo-iE-McL" firstAttribute="width" secondItem="ydK-hU-daN" secondAttribute="width" id="uZV-tH-vEE"/>
+                <constraint firstItem="jKK-QV-hCz" firstAttribute="width" secondItem="fjR-Rk-i98" secondAttribute="width" id="ufH-Di-8Ug"/>
+                <constraint firstItem="0UI-Nk-Prl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zRs-Hd-vgP"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

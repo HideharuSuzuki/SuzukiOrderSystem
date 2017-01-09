@@ -10,9 +10,9 @@
 #import "GroupListViewController.h"
 #import "GroupListCell.h"
 
-//#import "GroupDetailViewController.h"
-//#import "GroupStore.h"
-//#import "Group.h"
+#import "GroupDetailViewController.h"
+#import "GroupStore.h"
+#import "Group.h"
 
 @interface GroupListViewController ()
 
@@ -80,19 +80,19 @@
     [[self view] addSubview:[self m_GroupListTableView]];
     
     // カテゴリなしはアラート
-//    if([[[GroupStore defaultGroupStore] allGroups] count] <= 0){
-//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"現在カテゴリがありません"
-//                                                                                 message:@"カテゴリの追加は右上の「+」ボタンをタップして下さい。"
-//                                                                          preferredStyle:UIAlertControllerStyleAlert];
-//        //addAction指定で左からボタンを配置,タップ時の処理はブロックで指定
-//        [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
-//                                                            style:UIAlertActionStyleDefault
-//                                                          handler:^(UIAlertAction *action) {
-//                                                              [self dismissViewControllerAnimated:YES completion:nil];
-//                                                          }]];
-//        [self presentViewController:alertController animated:YES completion:nil];
-//
-//    }
+    if([[[GroupStore defaultGroupStore] allGroups] count] <= 0){
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"現在カテゴリがありません"
+                                                                                 message:@"カテゴリの追加は右上の「+」ボタンをタップして下さい。"
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        //addAction指定で左からボタンを配置,タップ時の処理はブロックで指定
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                              [self dismissViewControllerAnimated:YES completion:nil];
+                                                          }]];
+        [self presentViewController:alertController animated:YES completion:nil];
+
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -157,16 +157,16 @@
 {
     [[GroupStore defaultGroupStore] moveGroupAtIndex:(int)[sourceIndexPath row] toIndex:(int)[destinationIndexPath row]];
     [[GroupStore defaultGroupStore] saveContext];
-    [[self groupListTableView] reloadData];
+    [[self m_GroupListTableView] reloadData];
 }
 
 /* 編集ボタンタップ時実行 */
 -(void)tappedEditButton:(id)sender{
     if([[sender currentTitle] isEqualToString:@"編集"]){
-        [[self groupListTableView] setEditing:YES animated:YES];
+        [[self m_GroupListTableView] setEditing:YES animated:YES];
         [sender setTitle:@"完了" forState:UIControlStateNormal];
     }else{
-        [[self groupListTableView] setEditing:NO animated:YES];
+        [[self m_GroupListTableView] setEditing:NO animated:YES];
         [sender setTitle:@"編集" forState:UIControlStateNormal];
     }
 }

@@ -9,7 +9,7 @@
 #import "Define.h"
 #import "MasterListViewController.h"
 #import "MasterListCell.h"
-//#import "BasicSettingViewController.h"
+#import "GroupListViewController.h"
 
 @interface MasterListViewController ()
 
@@ -91,7 +91,10 @@
             
         }break;
         case 4:{ // カテゴリリスト
-            
+            GroupListViewController *groupListViewController = [[GroupListViewController alloc] init];
+            UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:groupListViewController];
+            [[self splitViewController] setViewControllers:@[[self navigationController], detailNavigationController]];
+            [[self splitViewController] setDelegate:groupListViewController];
         }break;
         case 5:{ // 注文画面確認
             

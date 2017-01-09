@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.h
+//  AirOrder
+//
+//  Created by Suzuki Hideharu on 2016/05/09.
+//  Copyright © 2016年 Suzuki.Works. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "FileHelpers.h"
+
+#endif /* PrefixHeader_h */
